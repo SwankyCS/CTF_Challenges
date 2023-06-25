@@ -1,0 +1,12 @@
+#!/bin/bash
+
+wordlist="output.txt"
+outputprefix="ls"
+
+count=1
+
+for word in $(cat "$wordlist"); do
+  outputfile="${outputprefix}_${count}.txt"
+  ls -al "$word" >> "$outputfile"
+  ((count++))
+done
