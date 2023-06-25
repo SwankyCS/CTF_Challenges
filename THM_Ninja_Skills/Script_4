@@ -1,0 +1,7 @@
+#!/bin/bash
+
+wordlist="output.txt"
+
+for file in $(cat "$wordlist"); do
+  sha1sum "$file" >> sha.txt
+done
