@@ -1,1 +1,16 @@
+Refer to the TryHackMe challenge link posted in the Readme file to get a full understanding of the challenge prior to reviewing the notes and scripts
 
+Introduction: I wanted to complete this challenge in a simple and reuseable way, so I decided to use bash scripts to reveal all of the flags. In addition, I wanted to display some use cases for ChatGPT as an assistance source for researching and troubleshooting. 
+
+Step 1: the first thing I did was navigate to a directory where I had write privileges to create a file (i.e. home direcotry). I then created a text file that contained the challenge file name's in a list format with the intention of using this in my bash scripts. 
+
+Step 2: I created a bash script [refer to the <Script_1> file] to find the location of each file and send the output to a text file. Whilst creating this script, I knew I wanted to use a 'for loop' and interate through a find command, but I couldn't quite remember the syntax, so I had some assitance here from ChatGPT.
+
+Step 3: Next, I created a bash script [refer to the <Script_2> file] to get the contents of each file and send the output of each file to new text files. I had a bit of trouble here, so again, I looked to ChatGPT for assistance, using the following prompt: "create a different output file for the contents of each file that was found with the previous script." 
+I then reviewed the contents and thought they were encoded using base64. So I run the following command to decode the contents: bash64 -d <file_name> > <output_file_name>.
+
+Step 4: I created another script [refer to the <Script_3> file] to show the permissions and owners of each challenge file. I did this by using a simple 'ls -al' command, placing each iteration into separate output file's. This provided the answers to questions 1, 5 and 6.
+
+Step 5: Next I focused on question 3. I did get stuck on this one because I was trying to find the hash in the contents of the files. I tried decoding from base64 and kept getting scrambled outputs, so I referred to a walkthough. It then hit me that I was looking at this wrong and I was supposed to be getting the hash for each file, not looking for the hash in the file. That's when I created a script [refer to the <Script_4> file] to encrypt each file with 'sha1sum'. 
+
+Step 6: I then focused on question 2. Again, I reviewed the contents of each file (utilising my previous script that retrieved the contents of each file and placed them in a central directory). I tried using the 'grep' for parts of the IP Address strucutre, such as '.'. However, there was too much content and nothing of value stood out. From here I used ChatGPT to refine my command and generate a regular expression string for an IP Address: 'grep -E -o "([0-9]{1,3}\.){3}[0-9]{1,3}"' filename. After this, I modified one of my earlier scripts to show me which file contained this regular expression [refer to the <Script_5> file]. 
