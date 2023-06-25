@@ -1,6 +1,6 @@
 Refer to the TryHackMe challenge link posted in the Readme file to get a full understanding of the challenge prior to reviewing the notes and scripts
 
-Introduction: I wanted to complete this challenge in a simple and reuseable way, so I decided to use bash scripts to reveal all of the flags. In addition, I wanted to display some use cases for ChatGPT as an assistance source for researching and troubleshooting. 
+Introduction: I wanted to complete this challenge in a simple and reuseable way, so I decided to use bash scripts (albeit very simply written scripts) to reveal all of the flags. In addition, I wanted to display some use cases for ChatGPT as an assistance source for researching and troubleshooting. 
 
 Step 1: the first thing I did was navigate to a directory where I had write privileges to create a file (i.e. home direcotry). I then created a text file that contained the challenge file name's in a list format with the intention of using this in my bash scripts. 
 
