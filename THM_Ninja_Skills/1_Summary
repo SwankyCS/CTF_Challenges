@@ -4,7 +4,7 @@ Introduction: I wanted to complete this challenge in a simple and reuseable way,
 
 Step 1: the first thing I did was navigate to a directory where I had write privileges to create a file (i.e. home direcotry). I then created a text file that contained the challenge file name's in a list format with the intention of using this in my bash scripts. 
 
-Step 2: I created a bash script [refer to the <Script_1> file] to find the location of each file and send the output to a text file. Whilst creating this script, I knew I wanted to use a 'for loop' and interate through a find command, but I couldn't quite remember the syntax, so I had some assitance here from ChatGPT.
+Step 2: I created a bash script [refer to the <Script_1> file] to find the location of each file and send the location as an output to a text file. Whilst creating this script, I knew I wanted to use a 'for loop' and interate through a find command, but I couldn't quite remember the syntax, so I had some assitance here from ChatGPT.
 
 Step 3: Next, I created a bash script [refer to the <Script_2> file] to get the contents of each file and send the output of each file to new text files. I had a bit of trouble here, so again, I looked to ChatGPT for assistance, using the following prompt: "create a different output file for the contents of each file that was found with the previous script." 
 I then reviewed the contents and thought they were encoded using base64. So I run the following command to decode the contents: bash64 -d <file_name> > <output_file_name>.
